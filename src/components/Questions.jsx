@@ -90,7 +90,7 @@ const Questions = ({ teamId, teamName }) => {
             text-align: center;
             font-weight: bold;
             font-family: 'Pirata One', cursive;
-            color: #8B0000;
+            color: #FFFFFF;
             margin-bottom: 20px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
           }
