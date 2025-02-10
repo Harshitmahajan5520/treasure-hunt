@@ -11,7 +11,7 @@ function App() {
   const [qualified, setQualified] = useState(false);
   const [showLeaderboard, setShowLeaderboard] = useState(false);
 
-  // Toggle Leaderboard
+  // Toggle Leaderboard (Only for Mobile)
   const toggleLeaderboard = () => {
     setShowLeaderboard(!showLeaderboard);
   };
@@ -20,9 +20,9 @@ function App() {
     <div className="container">
       <h1 className="text-center mt-4"></h1>
 
-      {/* Centered Leaderboard Button */}
-      <button className="leaderboard-btn" onClick={toggleLeaderboard}>
-      🏆 Leaderboard
+      {/* Leaderboard Button (Only on Mobile) */}
+      <button className="leaderboard-btn mobile-only" onClick={toggleLeaderboard}>
+        🏆 Leaderboard
       </button>
 
       <div className="content-container">
@@ -36,14 +36,15 @@ function App() {
           )}
         </div>
 
-        {/* Sidebar Leaderboard */}
+        {/* Always Visible Leaderboard on Desktop, Sidebar on Mobile */}
         <div className={`leaderboard-container ${showLeaderboard ? "show" : ""}`}>
-          <button className="close-btn" onClick={toggleLeaderboard}>❌</button>
+          {/* Close Button (Only on Mobile) */}
+          <button className="close-btn mobile-only" onClick={toggleLeaderboard}>❌</button>
           <Leaderboard />
         </div>
 
-        {/* Click Outside to Close */}
-        {showLeaderboard && <div className="overlay" onClick={toggleLeaderboard}></div>}
+        {/* Click Outside to Close (Only on Mobile) */}
+        {showLeaderboard && <div className="overlay mobile-only" onClick={toggleLeaderboard}></div>}
       </div>
     </div>
   );

@@ -49,21 +49,31 @@ html, body {
 .leaderboard-container {
   width: 300px;
 }
+/* Hide elements by default */
+.mobile-only {
+  display: none;
+}
+
+/* Show only on mobile screens */
 @media (max-width: 768px) {
-  /* Leaderboard Button - No Outline, No Fixed Position */
+  .mobile-only {
+    display: block;
+  }
+
+  /* Leaderboard Button (Only on Mobile) */
   .leaderboard-btn {
     display: block;
     margin: 20px auto;
-    background: #b89628;
+    background: #a58725;
     color: white;
     padding: 12px 20px;
-    border: 2px solid transparent;
+    border: none;
     border-radius: 8px;
     font-weight: bold;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    outline: none; /* Removes outline */
+    outline: none;
   }
 
   .leaderboard-btn:hover {
@@ -71,7 +81,7 @@ html, body {
     color: gold;
   }
 
-  /* Sidebar Leaderboard */
+  /* Sidebar Leaderboard (Only on Mobile) */
   .leaderboard-container {
     position: fixed;
     top: 0;
@@ -79,7 +89,7 @@ html, body {
     width: 320px;
     height: 100vh;
     background:transparent;
-    border-left: 2px solid ;
+    
     padding: 20px;
     box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.7);
     transition: right 0.4s ease-in-out;
@@ -91,7 +101,7 @@ html, body {
     right: 0;
   }
 
-  /* Close Button */
+  /* Close Button (Only on Mobile) */
   .close-btn {
     position: absolute;
     top: 10px;
@@ -109,7 +119,7 @@ html, body {
     color: red;
   }
 
-  /* Transparent Overlay */
+  /* Click Outside to Close (Only on Mobile) */
   .overlay {
     position: fixed;
     top: 0;
