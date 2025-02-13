@@ -8,7 +8,7 @@ export default defineConfig({
     strictPort: true, // Prevents Vite from switching to a different port if 5173 is busy
     proxy: {
       "/api": {
-        target: "http://localhost:5000", // Ensure backend is running on port 5000
+        target: "https://treasure-backend-steel.vercel.app", // Ensure backend is running on port 5000
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path, // Keep /api prefix for API calls
