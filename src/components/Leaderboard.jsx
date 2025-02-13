@@ -11,7 +11,7 @@ const Leaderboard = () => {
       try {
         const res = await getLeaderboard();
         if (!res || typeof res !== "object") {
-          throw new Error("Invalid response format from server.");
+          throw new Error("No Team Found!");
         }
         const leaderboardData = res.data || res;
         const sortedTeams = Object.entries(leaderboardData)

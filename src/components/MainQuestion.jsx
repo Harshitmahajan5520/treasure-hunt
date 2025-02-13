@@ -9,8 +9,7 @@ const MainQuestion = ({ teamId, setQualified }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const [qualified, setLocalQualified] = useState(false);  // ✅ Local state to track qualification
-
+  const [qualified, setLocalQualified] = useState(false);  
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
